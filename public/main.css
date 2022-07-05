@@ -9,9 +9,20 @@
 }
 
 /* header */
+
+#bar {
+    border: 1px solid black;
+    display: flex;
+}
+
+#brand {
+    margin-left: 1rem;
+}
+
 #navbarNav {
     display: flex;
     justify-content: flex-end;
+    margin-right: 0.5rem;
 }
 
 .nav-item {
@@ -21,8 +32,9 @@
 
 #username {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 50px;
+    align-items:center;
+    justify-content:center;
 }
 
 /* new */
@@ -30,21 +42,30 @@
     margin-top: 1em;
 }
 
-
 #text {
     margin-top: 1rem;
 }
 
 /* clucks */
-#cluck {
+#container {
     display: grid;
-    grid-template-columns: 72px, 1fr;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: min-content;
 }
 
-#avatar {
-    max-width: 72px;
-    max-height: 72px;
-    border-radius: 25%;
+#trending{
+    grid-column: 1;
+    height: min-content;
+}
+
+#index {
+    grid-column: 2;
+    height: min-content;
+}
+
+#cluck {
+    display: grid;
+    grid-template-columns: 75px 1fr;
 }
 
 #icon {
@@ -53,4 +74,29 @@
 
 #content {
     grid-column: 2;
+}
+
+#avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 25%;
+}
+
+#name {
+    font-weight: bold;
+}
+
+@media (max-width: 450px) {
+    #container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    #trending{
+        display: none;
+    }
+    
+    #index {
+        grid-column: 1;
+    }
 }
