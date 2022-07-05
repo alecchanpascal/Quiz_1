@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+<div class="card">
+    <div class="card-body">
+        <form action="/clucks" method="post">
+            <div class="form-group">
+              <label for="content">Content</label>
+              <br>
+              <textarea required name="content" class="form-control" id="content" rows="4" placeholder="Whatchoo cluckin' 'bout?"></textarea>
+              <label id="text">Image URL</label>
+              <input type="text" name="imageUrl" class="form-control" placeholder="https://i.imgur.com/qM6KaEy.gifv">
+            </div>
+            <div id="btn-container">
+              <button type="submit" id="cluck-btn" class="btn btn-outline-secondary btn-lg">Cluck!</button>
+            </div>
+          </form>
+    </div>
+</div>
+<%- include('./partials/footer') %>

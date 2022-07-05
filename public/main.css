@@ -1,3 +1,56 @@
+/* all */
 .card {
     margin: 1rem;
+}
+
+#btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* header */
+#navbarNav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    margin-left: 0.5rem; 
+    margin-right: 0.5rem;
+}
+
+#username {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* new */
+#cluck-btn {
+    margin-top: 1em;
+}
+
+
+#text {
+    margin-top: 1rem;
+}
+
+/* clucks */
+#cluck {
+    display: grid;
+    grid-template-columns: 72px, 1fr;
+}
+
+#avatar {
+    max-width: 72px;
+    max-height: 72px;
+    border-radius: 25%;
+}
+
+#icon {
+    grid-column: 1;
+}
+
+#content {
+    grid-column: 2;
 }

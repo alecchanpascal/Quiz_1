@@ -1,3 +1,20 @@
 <%- include('./partials/header') %>
-
+<%if (clucks) { %>
+    <% clucks.forEach(element => { %>
+        <div class="card">
+            <div class="card-body" id="cluck">
+                <div id="icon">
+                    <img class="card-img-top" id="avatar" src="https://w7.pngwing.com/pngs/33/285/png-transparent-rooster-chicken-bird-icon-cock-avatar-love-heroes-heart.png" class="img-thumbnail">
+                </div>
+                <div id="content">
+                    <p class="card-title" id="name"><%= element.username %> · <%=element.created_at %></p>
+                    <p class="card-text"><%= element.content %></p>
+                    <% if (element.imageUrl) { %>
+                        <img class="card-text" src=<%= element.imageUrl %> class="img-fluid">
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+<% } %>
 <%- include('./partials/footer') %>
