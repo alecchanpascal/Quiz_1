@@ -13,36 +13,38 @@
         </div>
     <% } %>
     <%if (clucks) { %>
-        <% clucks.forEach(element => { %>
-            <div class="card" id="index">
-                <div class="card-body" id="cluck">
-                    <div id="icon">
-                        <img class="card-img-top" id="avatar" src="https://w7.pngwing.com/pngs/33/285/png-transparent-rooster-chicken-bird-icon-cock-avatar-love-heroes-heart.png" class="img-thumbnail">
-                    </div>
-                    <div id="content">
-                        <p class="card-title" id="name"><%= element.username %> ·
-                            <% let time = new Date() - element.created_at %>
-                        <% if (time < 60000) { %>
-                            Just now
-                        <% } else if (3600000 > time && time >= 60000) { %> 
-                            <%= Math.round((time) / 60000) %> min. ago
-                        <% } else if (86400000 > time && time >= 3600000) { %>
-                            <%= Math.round((time) / 3600000) %> hour(s) ago
-                        <% } else if (2592000000 > time && time >= 86400000) { %>
-                            <%= Math.round((time) / 86400000) %> day(s) ago
-                        <% } else if (31104000000 > time && time >= 2592000000) { %>
-                            <%= Math.round((time) / 2592000000) %> month(s) ago
-                        <% } else if (time >= 31104000000) { %>
-                            <%= Math.round((time) / 31104000000) %> year(s) ago
-                        <% } %></p>
-                        <p class="card-text"><%= element.content %></p>
-                        <% if (element.imageUrl) { %>
-                            <img class="img-fluid" src=<%= element.imageUrl %> >
-                        <% } %>
+        <div id="index">
+            <% clucks.forEach(element => { %>
+                <div class="card">
+                    <div class="card-body" id="cluck">
+                        <div id="icon">
+                            <img class="card-img-top" id="avatar" src="https://w7.pngwing.com/pngs/33/285/png-transparent-rooster-chicken-bird-icon-cock-avatar-love-heroes-heart.png" class="img-thumbnail">
+                        </div>
+                        <div id="content">
+                            <p class="card-title" id="name"><%= element.username %> ·
+                                <% let time = new Date() - element.created_at %>
+                            <% if (time < 60000) { %>
+                                Just now
+                            <% } else if (3600000 > time && time >= 60000) { %> 
+                                <%= Math.round((time) / 60000) %> min. ago
+                            <% } else if (86400000 > time && time >= 3600000) { %>
+                                <%= Math.round((time) / 3600000) %> hour(s) ago
+                            <% } else if (2592000000 > time && time >= 86400000) { %>
+                                <%= Math.round((time) / 86400000) %> day(s) ago
+                            <% } else if (31104000000 > time && time >= 2592000000) { %>
+                                <%= Math.round((time) / 2592000000) %> month(s) ago
+                            <% } else if (time >= 31104000000) { %>
+                                <%= Math.round((time) / 31104000000) %> year(s) ago
+                            <% } %></p>
+                            <p class="card-text"><%= element.content %></p>
+                            <% if (element.imageUrl) { %>
+                                <img class="img-fluid" src=<%= element.imageUrl %> >
+                            <% } %>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <% }) %>
+            <% }) %>
+        </div>
     <% } %>
 </div>
 <%- include('./partials/footer') %>

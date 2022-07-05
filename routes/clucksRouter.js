@@ -61,6 +61,11 @@ router.post('/signin', (request, response) => {
     response.redirect('/clucks');
 });
 
+router.post('/signinFirst', (request, response) => {
+    response.cookie('username', request.body.username);
+    response.redirect('/clucks/new');
+})
+
 router.get('/signout', (request, response) => {
     response.clearCookie('username');
     response.redirect('/clucks');
