@@ -8,7 +8,7 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      database: '',
+      database: 'Cluckr',
       username: 'nimbus-user',
       password: '123'
     },

@@ -29,6 +29,13 @@ app.use((request, response, next) => {
     next();
 })
 
+app.get('/', (request, response) => {
+    response.redirect('/clucks');
+})
+
+const clucksRouter = require('./routes/clucksRouter');
+app.use('/clucks', clucksRouter);
+
 const PORT = 3000
 const HOST = 'localhost'
 app.listen(PORT, HOST, () => {
